@@ -1,22 +1,20 @@
 ﻿#include <iostream>
 #include <cstdlib>
-#include "Parser.h"
+#include "Console.h"
 
 using namespace std;
-int main(int argc, char* argv[])
+int main(string cdVFS, string cdCommandsFile)
 {
 	setlocale(LC_ALL, "Russian");
-	string userRequest;
-	std::cout << "Количество аргументов: " << argc << std::endl; // Выводит количество аргументов
-	for (int i = 0; i < argc; ++i) {
-		std::cout << "Аргумент " << i << ": " << argv[i] << std::endl; // Выводит каждый аргумент
-	}	
-	Parser* parser = new Parser();
-	while (true) {
-		cout << "VFS>";
-		getline(cin, userRequest);
-		parser->parsing(userRequest);
-		//cout << path_var;
-	}
-	delete parser;
+	Console* console = new Console();
+	console->start(cdVFS, cdCommandsFile);
+	//string userRequest;
+	//Parser* parser = new Parser();
+	//while (true) {
+	//	cout << "VFS>";
+	//	getline(cin, userRequest);
+	//	parser->parsing(userRequest);
+	//	//cout << path_var;
+	//}
+	//delete parser;
 }

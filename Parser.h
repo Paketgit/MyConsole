@@ -3,6 +3,9 @@
 #include <vector>
 #include <map>
 #include <functional>
+#include <sstream>
+#include <iostream>
+#include <format>
 
 using namespace std;
 class Parser {
@@ -15,5 +18,8 @@ public:
 private:
 	void ls(const vector<string>& args);
 	void exit(const vector<string>& args);
-	void varENV(const string args);
+	string varENV(const string args);
+	void help(const vector<string>& args);
+	void execute(string commandName, const vector<string>& args = {});
+
 };
